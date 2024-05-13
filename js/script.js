@@ -14,4 +14,19 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+/* console.log(getComputerChoice()); */
+
+// LOGIC TO GET THE HUMAN CHOICE
+
+function getHumanChoice(){
+    let humanChoice =  prompt("Rock, Paper or Scissors");
+
+    return humanChoice;
+}
+
+/* console.log(getHumanChoice()); */
+
+
+
+
+
