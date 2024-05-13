@@ -4,11 +4,11 @@ function getComputerChoice() {
     const randomNumber = Math.random();
     let computerChoice;
     if (randomNumber< 0.33) {
-        computerChoice = "Rock";
+        computerChoice = "rock";
     } else if (randomNumber< 0.66){
-        computerChoice = "Paper";
+        computerChoice = "paper";
     } else{
-        computerChoice = "Scissors";
+        computerChoice = "scissors";
     }
 
     return computerChoice;
@@ -26,36 +26,52 @@ function getHumanChoice(){
 
 let humanScore = 0;
 let computerScore = 0;
+let tie = 0;
 
 //LOGIC TO PLAY A SINGLE ROUND
 
 function playRound(humanChoice, computerChoice) {
 
-    console.log(humanChoice);
-    console.log(computerChoice);
+    console.log(`You chose: ${humanChoice} | Computer chose: ${computerChoice}`)
 
     if(humanChoice === "rock" && computerChoice === "rock"){
-        return `It's a tie!`;
+        tie++;
+        console.log(`It's a tie!`);
     } else if (humanChoice === "rock" && computerChoice === "paper"){
-        return `You lose`;
+        computerScore++;
+        console.log(`You lose`);
     } else if (humanChoice === "rock" && computerChoice === "scissors"){
-        return `You win!`;
+        humanScore++;
+        console.log(`You win!`);
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        return `You win!`;
+        humanScore++;
+        console.log(`You win!`);
     } else if (humanChoice === "paper" && computerChoice === "paper") {
-        return `It's a tie!`;
+        tie++;
+        console.log(`It's a tie!`);
     } else if (humanChoice === "paper" && computerChoice === "scissors"){
-        return `You lose`;
+        computerScore++;
+        console.log(`You lose`);
     } else if (humanChoice === "scissors" && computerChoice === "rock"){
-        return `You lose`;
+        computerScore++;
+        console.log(`You lose`);
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
-        return `You win!`;
+        humanScore++;
+        console.log(`You win!`);
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
-        return `It's a tie!`;
+        tie++;
+        console.log(`It's a tie!`);
+    } else {
+        console.log(`Input a valid word`);
     }
 
+    
 }
 
+const humanSelection = getHumanChoice().toLowerCase();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
 
 
