@@ -19,7 +19,7 @@ function getComputerChoice() {
 function getHumanChoice(){
     let humanChoice =  prompt("Rock, Paper or Scissors");
 
-    return humanChoice;
+    return humanChoice.toLowerCase();
 }
 
 // DECLARING PLAYERS SCORE VARIABLES
@@ -64,16 +64,31 @@ function playRound(humanChoice, computerChoice) {
     } else {
         console.log(`Input a valid word`);
     }
-
-    
 }
 
-const humanSelection = getHumanChoice().toLowerCase();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+//LOGIC TO PLAY THE ENTIRE GAME
 
+function playGame() {
+    let i = 0;
+    
+    while (i < 5){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        i++;
+    }
+    console.log("--RESULTS--")
+    if(humanScore> computerScore){
+        console.log(`You win! Your points: ${humanScore}`);
+    } else if(computerScore> humanScore){
+        console.log(`You lose! Your points: ${computerScore}`);
+    } else {
+        console.log(`It's a tie! Your points: ${computerScore}`);
+    }
+}
 
+playGame();
 
 
 
