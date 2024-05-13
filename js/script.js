@@ -14,8 +14,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-/* console.log(getComputerChoice()); */
-
 // LOGIC TO GET THE HUMAN CHOICE
 
 function getHumanChoice(){
@@ -24,7 +22,40 @@ function getHumanChoice(){
     return humanChoice;
 }
 
-/* console.log(getHumanChoice()); */
+// DECLARING PLAYERS SCORE VARIABLES
+
+let humanScore = 0;
+let computerScore = 0;
+
+//LOGIC TO PLAY A SINGLE ROUND
+
+function playRound(humanChoice, computerChoice) {
+
+    console.log(humanChoice);
+    console.log(computerChoice);
+
+    if(humanChoice === "rock" && computerChoice === "rock"){
+        return `It's a tie!`;
+    } else if (humanChoice === "rock" && computerChoice === "paper"){
+        return `You lose`;
+    } else if (humanChoice === "rock" && computerChoice === "scissors"){
+        return `You win!`;
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
+        return `You win!`;
+    } else if (humanChoice === "paper" && computerChoice === "paper") {
+        return `It's a tie!`;
+    } else if (humanChoice === "paper" && computerChoice === "scissors"){
+        return `You lose`;
+    } else if (humanChoice === "scissors" && computerChoice === "rock"){
+        return `You lose`;
+    } else if (humanChoice === "scissors" && computerChoice === "paper"){
+        return `You win!`;
+    } else if (humanChoice === "scissors" && computerChoice === "scissors") {
+        return `It's a tie!`;
+    }
+
+}
+
 
 
 
